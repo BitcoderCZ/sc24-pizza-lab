@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Container,
-  Typography,
   Grid,
   Card,
   CardMedia,
@@ -27,6 +26,9 @@ import pizzaMeat from '../assets/images/pizza-meat.png';
 import pizzaHawaiian from '../assets/images/pizza-hawaiian.png';
 import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
 import pizzaSpinach from '../assets/images/pizza-spinach.png';
+import { useTheme } from '@mui/material/styles';
+import BackgroundText from '../components/BackgroundText';
+import PrimaryText from '../components/PrimaryText';
 
 const pizzas = [
   {
@@ -106,6 +108,8 @@ const FoodMenu = () => {
   const [favorites, setFavorites] = useState({});
   const [quantity, setQuantity] = useState({});
 
+  const theme = useTheme();
+
   const handleCrustChange = (event, newCrust, index) => {
     setSelectedCrust((prevState) => ({ ...prevState, [index]: newCrust }));
   };
@@ -124,16 +128,27 @@ const FoodMenu = () => {
     }
   };
 
+  console.log(theme);
+
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
-      <Container maxWidth="lg">
-        <Typography variant="h3" gutterBottom>
+    <Box sx={{ py: 4, background: theme.palette.background.main }}>
+      <Container maxWidth="xl">
+        <BackgroundText variant="h3" gutterBottom>
           Our Food Menu
-        </Typography>
+        </BackgroundText>
         <Grid container spacing={4}>
           {pizzas.map((pizza, index) => (
-            <Grid item xs={12} sm={6} key={pizza.name}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            <Grid item xs={12} sm={4} key={pizza.name}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  background: theme.palette.primary.main,
+                  borderRadius: 5,
+                }}
+              >
                 <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
                 <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
                   <Checkbox
@@ -198,32 +213,32 @@ const FoodMenu = () => {
                 </ToggleButtonGroup>
 
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography variant="h5" gutterBottom>
+                  <PrimaryText variant="h5" gutterBottom>
                     {pizza.name}
-                  </Typography>
-                  <Typography variant="body1" paragraph>
+                  </PrimaryText>
+                  <PrimaryText variant="body1" paragraph>
                     {pizza.description}
-                  </Typography>
-                  <Typography variant="body2">
+                  </PrimaryText>
+                  <PrimaryText variant="body2">
                     <strong>Ingredients:</strong> {pizza.ingredients}
-                  </Typography>
-                  <Typography variant="body2">
+                  </PrimaryText>
+                  <PrimaryText variant="body2">
                     <strong>Allergens:</strong> {pizza.allergens}
-                  </Typography>
+                  </PrimaryText>
                 </CardContent>
                 <CardActions sx={{ padding: '16px' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
-                      <Remove />
+                      <Remove color="action" />
                     </IconButton>
-                    <Typography variant="body1" sx={{ margin: '0 12px' }}>
+                    <PrimaryText variant="body1" sx={{ margin: '0 12px' }}>
                       {quantity[index] || 1}
-                    </Typography>
+                    </PrimaryText>
                     <IconButton onClick={() => handleIncreaseQuantity(index)}>
-                      <Add />
+                      <Add color="action" />
                     </IconButton>
                   </Box>
-                  <Button variant="contained" color="primary" size="large">
+                  <Button variant="contained" color="secondary" size="large" sx={{ borderRadius: 3 }}>
                     Add to my Order
                   </Button>
                 </CardActions>

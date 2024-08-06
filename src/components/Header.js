@@ -1,15 +1,18 @@
 import React from 'react';
 import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material';
-import pizzaCover from '../assets/images/pizza-cover.jpg';
+import bannerPicture from '../assets/images/banner-picture.png';
+import { useTheme } from '@mui/material/styles';
 
 const Header = () => {
+  const theme = useTheme();
+
   return (
     <Box
       sx={{
         position: 'relative',
         width: '100%',
         height: '100vh',
-        backgroundImage: `url(${pizzaCover})`,
+        backgroundImage: `url(${bannerPicture})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
@@ -31,13 +34,14 @@ const Header = () => {
           <Box
             sx={{
               padding: 2,
-              backgroundColor: 'rgba(255, 255, 255)',
+              backgroundColor: theme.palette.background.main + 'A0',
+              borderRadius: 10,
             }}
           >
             <Typography
               variant="h1"
+              color={theme.palette.background.contrastText}
               sx={{
-                color: '#000',
                 padding: '8px 16px',
               }}
             >

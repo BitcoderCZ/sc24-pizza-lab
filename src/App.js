@@ -13,8 +13,20 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#056040',
+      main: '#210061',
       contrastText: '#fff',
+    },
+    secondary: {
+      main: '#ee8bff',
+      contrastText: '#112A46',
+    },
+    background: {
+      main: '#2e4590',
+      contrastText: '#ffffff',
+    },
+    action: {
+      main: '#FFFFFF',
+      contrastText: '#ffffff',
     },
   },
 });
