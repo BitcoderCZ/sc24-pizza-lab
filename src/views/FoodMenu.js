@@ -143,7 +143,7 @@ const FoodMenu = () => {
             paddingTop: 2,
             paddingBottom: 0.5,
             margin: 5,
-            backgroundColor: theme.palette.background.main + 'A0',
+            backgroundColor: theme.palette.background.main + 'C6',
             borderRadius: 10,
           }}
         >
@@ -169,7 +169,11 @@ const FoodMenu = () => {
                   Custom Pizza
                 </PrimaryText>
                 <PrimaryText variant="body1" paragraph>
-                  Build a custom pizza
+                  Build your custom pizza.
+                </PrimaryText>
+                <PrimaryText variant="body2">
+                  Choose up to 8 different pizzas and combine them in one. With our custom pizza feature you can choose every slice and create your
+                  own perfect pizza.
                 </PrimaryText>
               </CardContent>
               <CardActions sx={{ padding: '16px' }}>
