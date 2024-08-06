@@ -26,6 +26,7 @@ import pizzaMeat from '../assets/images/pizza-meat.png';
 import pizzaHawaiian from '../assets/images/pizza-hawaiian.png';
 import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
 import pizzaSpinach from '../assets/images/pizza-spinach.png';
+import pizzaCustom from '../assets/images/pizza-custom.png';
 import { useTheme } from '@mui/material/styles';
 import BackgroundText from '../components/BackgroundText';
 import PrimaryText from '../components/PrimaryText';
@@ -137,6 +138,44 @@ const FoodMenu = () => {
           Our Food Menu
         </BackgroundText>
         <Grid container spacing={4}>
+          <Grid item xs={12} sm={4} key="Custom Pizza">
+            <Card
+              sx={{
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                background: theme.palette.primary.main,
+                borderRadius: 5,
+              }}
+            >
+              <CardMedia component="img" height="200" image={pizzaCustom} alt="Custom pizza" />
+              <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                <PrimaryText variant="h5" gutterBottom>
+                  Custom Pizza
+                </PrimaryText>
+                <PrimaryText variant="body1" paragraph>
+                  Build a custom pizza
+                </PrimaryText>
+              </CardContent>
+              <CardActions sx={{ padding: '16px' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+                  <IconButton onClick={() => handleDecreaseQuantity(-1)}>
+                    <Remove color="action" />
+                  </IconButton>
+                  <PrimaryText variant="body1" sx={{ margin: '0 12px' }}>
+                    {quantity[-1] || 1}
+                  </PrimaryText>
+                  <IconButton onClick={() => handleIncreaseQuantity(-1)}>
+                    <Add color="action" />
+                  </IconButton>
+                </Box>
+                <Button variant="contained" color="secondary" size="large" sx={{ borderRadius: 3 }}>
+                  Add to my Order
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
           {pizzas.map((pizza, index) => (
             <Grid item xs={12} sm={4} key={pizza.name}>
               <Card
