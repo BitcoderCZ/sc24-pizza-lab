@@ -30,6 +30,7 @@ import pizzaCustom from '../assets/images/pizza-custom.png';
 import { useTheme } from '@mui/material/styles';
 import BackgroundText from '../components/BackgroundText';
 import PrimaryText from '../components/PrimaryText';
+import bannerPicture from '../assets/images/banner-picture.png';
 
 const pizzas = [
   {
@@ -132,11 +133,24 @@ const FoodMenu = () => {
   console.log(theme);
 
   return (
-    <Box sx={{ py: 4, background: theme.palette.background.main }}>
+    <Box sx={{ py: 4, backgroundImage: `url(${bannerPicture})`, backgroundAttachment: 'fixed' }}>
       <Container maxWidth="xl">
-        <BackgroundText variant="h3" gutterBottom>
-          Our Food Menu
-        </BackgroundText>
+        <Box
+          align="left"
+          sx={{
+            width: '25%',
+            paddingLeft: 3,
+            paddingTop: 2,
+            paddingBottom: 0.5,
+            margin: 5,
+            backgroundColor: theme.palette.background.main + 'A0',
+            borderRadius: 10,
+          }}
+        >
+          <BackgroundText variant="h3" gutterBottom>
+            Our Food Menu
+          </BackgroundText>
+        </Box>
         <Grid container spacing={4}>
           <Grid item xs={12} sm={4} key="Custom Pizza">
             <Card
@@ -155,11 +169,7 @@ const FoodMenu = () => {
                   Custom Pizza
                 </PrimaryText>
                 <PrimaryText variant="body1" paragraph>
-                  Build your custom pizza.
-                </PrimaryText>
-                <PrimaryText variant="body2">
-                  Choose up to 8 different pizzas and combine them in one. With our custom pizza feature you can choose every slice and create your
-                  own perfect pizza.
+                  Build a custom pizza
                 </PrimaryText>
               </CardContent>
               <CardActions sx={{ padding: '16px' }}>
