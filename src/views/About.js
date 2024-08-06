@@ -1,8 +1,10 @@
 import React from 'react';
-import { Box, Container, Typography, Grid } from '@mui/material';
+import { Box, Container, Typography, Grid, Alert } from '@mui/material';
 import founders from '../assets/images/founders.png';
 import restaurant from '../assets/images/restaurant.png';
 import deliciousPizza from '../assets/images/delicious-pizza.png';
+import CustomButton from '../components/CustomButton';
+import DoneIcon from '@mui/icons-material/Done';
 
 const About = () => {
   return (
@@ -11,6 +13,12 @@ const About = () => {
         <Typography variant="h3" gutterBottom>
           Pizza Lab Story
         </Typography>
+        <CustomButton endIcon={<DoneIcon />}>Text</CustomButton>
+        <Alert severity="success">Random alert</Alert>
+        <Typography variant="h3" gutterBottom>
+          Some text
+        </Typography>
+
         <Grid container spacing={4}>
           <Grid item xs={12} sm={6}>
             <img src={founders} alt="Founders" style={{ width: '100%', borderRadius: '8px' }} />

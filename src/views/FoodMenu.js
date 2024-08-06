@@ -27,6 +27,7 @@ import pizzaMeat from '../assets/images/pizza-meat.png';
 import pizzaHawaiian from '../assets/images/pizza-hawaiian.png';
 import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
 import pizzaSpinach from '../assets/images/pizza-spinach.png';
+import { useTheme } from '@mui/material/styles';
 
 const pizzas = [
   {
@@ -106,6 +107,8 @@ const FoodMenu = () => {
   const [favorites, setFavorites] = useState({});
   const [quantity, setQuantity] = useState({});
 
+  const theme = useTheme();
+
   const handleCrustChange = (event, newCrust, index) => {
     setSelectedCrust((prevState) => ({ ...prevState, [index]: newCrust }));
   };
@@ -124,16 +127,18 @@ const FoodMenu = () => {
     }
   };
 
+  console.log(theme);
+
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
-      <Container maxWidth="lg">
-        <Typography variant="h3" gutterBottom>
+    <Box sx={{ py: 4, background: theme.palette.background.main }}>
+      <Container maxWidth="xl">
+        <Typography variant="h3" color={theme.palette.background.contrastText} gutterBottom>
           Our Food Menu
         </Typography>
         <Grid container spacing={4}>
           {pizzas.map((pizza, index) => (
-            <Grid item xs={12} sm={6} key={pizza.name}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            <Grid item xs={12} sm={4} key={pizza.name}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative', background: theme.palette.secondary.main }}>
                 <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
                 <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
                   <Checkbox
@@ -198,16 +203,16 @@ const FoodMenu = () => {
                 </ToggleButtonGroup>
 
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography variant="h5" gutterBottom>
+                  <Typography variant="h5" color={theme.palette.secondary.contrastText} gutterBottom>
                     {pizza.name}
                   </Typography>
-                  <Typography variant="body1" paragraph>
+                  <Typography variant="body1" color={theme.palette.secondary.contrastText} paragraph>
                     {pizza.description}
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography variant="body2" color={theme.palette.secondary.contrastText}>
                     <strong>Ingredients:</strong> {pizza.ingredients}
                   </Typography>
-                  <Typography variant="body2">
+                  <Typography variant="body2" color={theme.palette.secondary.contrastText}>
                     <strong>Allergens:</strong> {pizza.allergens}
                   </Typography>
                 </CardContent>
