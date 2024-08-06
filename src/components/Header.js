@@ -52,7 +52,7 @@ const Header = () => {
                 padding: '8px 16px',
               }}
             >
-              The best pizza of Your life is just one click away!
+              <strong>The best pizza of Your life is just one click away!</strong>
             </Typography>
           </Box>
           <ButtonGroup
