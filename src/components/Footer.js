@@ -63,7 +63,7 @@ const Footer = () => {
               Home
             </Link>
             <br />
-            <Link href="/menu" color="inherit" underline="hover">
+            <Link href="/food-menu" color="inherit" underline="hover">
               Menu
             </Link>
             <br />
