@@ -28,6 +28,7 @@ import pizzaHawaiian from '../assets/images/pizza-hawaiian.png';
 import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
 import pizzaSpinach from '../assets/images/pizza-spinach.png';
 import { useTheme } from '@mui/material/styles';
+import BackgroundText from '../components/BackgroundText';
 
 const pizzas = [
   {
@@ -132,13 +133,22 @@ const FoodMenu = () => {
   return (
     <Box sx={{ py: 4, background: theme.palette.background.main }}>
       <Container maxWidth="xl">
-        <Typography variant="h3" color={theme.palette.background.contrastText} gutterBottom>
+        <BackgroundText variant="h3" gutterBottom>
           Our Food Menu
-        </Typography>
+        </BackgroundText>
         <Grid container spacing={4}>
           {pizzas.map((pizza, index) => (
             <Grid item xs={12} sm={4} key={pizza.name}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative', background: theme.palette.secondary.main }}>
+              <Card
+                sx={{
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  position: 'relative',
+                  background: theme.palette.secondary.main,
+                  borderRadius: 5,
+                }}
+              >
                 <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
                 <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
                   <Checkbox
@@ -228,7 +238,7 @@ const FoodMenu = () => {
                       <Add />
                     </IconButton>
                   </Box>
-                  <Button variant="contained" color="primary" size="large">
+                  <Button variant="contained" color="primary" size="large" sx={{ borderRadius: 3 }}>
                     Add to my Order
                   </Button>
                 </CardActions>

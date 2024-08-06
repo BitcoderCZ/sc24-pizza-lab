@@ -1,38 +1,41 @@
 import React from 'react';
 import { Box, Container, Grid, Typography, TextField, Button } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
+import BackgroundText from '../components/BackgroundText';
 
 const Contact = () => {
+  const theme = useTheme();
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
+    <Box sx={{ py: 4, background: theme.palette.background.main }}>
       <Container maxWidth="md">
-        <Typography variant="h3" gutterBottom>
+        <Typography variant="h3" color={theme.palette.background.contrastText} gutterBottom>
           Contact Us
         </Typography>
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
-            <Typography variant="h6" gutterBottom>
+            <BackgroundText variant="h6" gutterBottom>
               Our Address
-            </Typography>
-            <Typography variant="body1">Pizza Lab</Typography>
-            <Typography variant="body1">Náměstí 1</Typography>
-            <Typography variant="body1">110 00 Prague, Czech Republic</Typography>
-            <Typography variant="body1" gutterBottom>
+            </BackgroundText>
+            <BackgroundText variant="body1">Pizza Lab</BackgroundText>
+            <BackgroundText variant="body1">Náměstí 1</BackgroundText>
+            <BackgroundText variant="body1">110 00 Prague, Czech Republic</BackgroundText>
+            <BackgroundText variant="body1" gutterBottom>
               Phone: +420 123 456 789
-            </Typography>
-            <Typography variant="body1" gutterBottom>
+            </BackgroundText>
+            <BackgroundText variant="body1" gutterBottom>
               Email: info@pizzalab.cz
-            </Typography>
+            </BackgroundText>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography variant="h6" gutterBottom>
+            <BackgroundText variant="h6" gutterBottom>
               Contact Form
-            </Typography>
+            </BackgroundText>
             <form noValidate autoComplete="off">
               <TextField label="Name" variant="outlined" fullWidth margin="normal" required />
               <TextField label="Email" variant="outlined" fullWidth margin="normal" required type="email" />
               <TextField label="Message" variant="outlined" fullWidth margin="normal" required multiline rows={4} />
               <Box mt={2}>
-                <Button variant="contained" color="primary" type="submit">
+                <Button variant="contained" type="submit">
                   Send Message
                 </Button>
               </Box>
