@@ -45,13 +45,13 @@ const Header = () => {
             }}
           >
             <Typography
-              variant="h1"
+              variant="h2"
               color={theme.palette.background.contrastText}
               sx={{
                 padding: '8px 16px',
               }}
             >
-              Taste the best pizza of Your life!
+              The best pizza of Your life is just one click away!
             </Typography>
           </Box>
           <ButtonGroup
