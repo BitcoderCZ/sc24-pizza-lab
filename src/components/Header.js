@@ -72,7 +72,7 @@ const Header = () => {
                   strokeWidth: '2',
                   stroke: '#fff',
                 },
-                borderRadius: 5,
+                borderRadius: 12,
               }}
               size="extraLarge"
               component={RouterLink}
