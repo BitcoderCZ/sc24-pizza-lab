@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Button, ButtonGroup, Stack, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Grid, Stack, Typography } from '@mui/material';
 import bannerPicture from '../assets/images/banner-picture.png';
 import { useTheme } from '@mui/material/styles';
 
@@ -31,7 +31,13 @@ const Header = () => {
         }}
       >
         <Stack spacing={2} direction="column">
+          <Grid align="center" justify="center" alignItems="center" direction="row">
+            <img style={{ borderRadius: 50 }} width="350vmin" src={require('../assets/images/logo.png')} />
+          </Grid>
           <Box
+            align="center"
+            justify="center"
+            alignItems="center"
             sx={{
               padding: 2,
               backgroundColor: theme.palette.background.main + 'A0',

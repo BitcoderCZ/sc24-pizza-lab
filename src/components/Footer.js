@@ -39,7 +39,7 @@ const Footer = () => {
             </Typography>
             <Typography variant="body1" gutterBottom>
               <AlternateEmailIcon />
-              &nbsp;info@pizzeria.cz
+              &nbsp;info@hoodline.cz
             </Typography>
             <Typography variant="body1" gutterBottom>
               <PlaceIcon />
@@ -78,7 +78,7 @@ const Footer = () => {
         </Grid>
         <Box mt={4} textAlign="center">
           <Typography variant="body2" color="inherit">
-            &copy; {new Date().getFullYear()} Pizzeria. All rights reserved.
+            &copy; {new Date().getFullYear()} Hoodline. All rights reserved.
           </Typography>
         </Box>
       </Container>
