@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Button, ButtonGroup, Grid, Stack, Typography } from '@mui/material';
 import bannerPicture from '../assets/images/banner-picture.png';
 import { useTheme } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router-dom';
 
 const Header = () => {
   const theme = useTheme();
@@ -61,9 +62,6 @@ const Header = () => {
               justifyContent: 'center',
             }}
           >
-            <Button variant="contained" color="error" size="large">
-              Call now!
-            </Button>
             <Button
               variant="outlined"
               color="error"
@@ -74,10 +72,13 @@ const Header = () => {
                   strokeWidth: '2',
                   stroke: '#fff',
                 },
+                borderRadius: 5,
               }}
-              size="large"
+              size="extraLarge"
+              component={RouterLink}
+              to="food-menu"
             >
-              Explore menu
+              Order
             </Button>
           </ButtonGroup>
         </Stack>

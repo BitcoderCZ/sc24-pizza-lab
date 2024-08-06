@@ -28,6 +28,16 @@ const theme = createTheme({
       contrastText: '#ffffff',
     },
   },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { size: 'extraLarge' },
+          style: { fontSize: 70, padding: '4px 20px' },
+        },
+      ],
+    },
+  },
 });
 
 const App = () => {
