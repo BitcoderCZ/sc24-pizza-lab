@@ -16,7 +16,7 @@ const Contact = () => {
             <BackgroundText variant="h6" gutterBottom>
               Our Address
             </BackgroundText>
-            <BackgroundText variant="body1">Pizza Lab</BackgroundText>
+            <BackgroundText variant="body1">Hoodline</BackgroundText>
             <BackgroundText variant="body1">Náměstí 1</BackgroundText>
             <BackgroundText variant="body1">110 00 Prague, Czech Republic</BackgroundText>
             <BackgroundText variant="body1" gutterBottom>

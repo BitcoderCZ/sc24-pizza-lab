@@ -22,7 +22,7 @@ const NavBar = () => {
           <LocalPizzaIcon htmlColor="#fff" />
         </IconButton>
         <Typography variant="h6" component={'h1'} color="white" sx={{ flexGrow: 1 }} aria-label="brand name">
-          Pizza Lab
+          Hoodline
         </Typography>
         <Stack direction="row" sx={{ flexGrow: 1 }} spacing={2}>
           <Button variant="text" color="inherit" aria-label="menu" onClick={handleMenuOpen}>
