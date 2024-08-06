@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box,
   Container,
-  Typography,
   Grid,
   Card,
   CardMedia,
@@ -29,6 +28,7 @@ import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
 import pizzaSpinach from '../assets/images/pizza-spinach.png';
 import { useTheme } from '@mui/material/styles';
 import BackgroundText from '../components/BackgroundText';
+import PrimaryText from '../components/PrimaryText';
 
 const pizzas = [
   {
@@ -145,7 +145,7 @@ const FoodMenu = () => {
                   display: 'flex',
                   flexDirection: 'column',
                   position: 'relative',
-                  background: theme.palette.secondary.main,
+                  background: theme.palette.primary.main,
                   borderRadius: 5,
                 }}
               >
@@ -213,32 +213,32 @@ const FoodMenu = () => {
                 </ToggleButtonGroup>
 
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
-                  <Typography variant="h5" color={theme.palette.secondary.contrastText} gutterBottom>
+                  <PrimaryText variant="h5" gutterBottom>
                     {pizza.name}
-                  </Typography>
-                  <Typography variant="body1" color={theme.palette.secondary.contrastText} paragraph>
+                  </PrimaryText>
+                  <PrimaryText variant="body1" paragraph>
                     {pizza.description}
-                  </Typography>
-                  <Typography variant="body2" color={theme.palette.secondary.contrastText}>
+                  </PrimaryText>
+                  <PrimaryText variant="body2">
                     <strong>Ingredients:</strong> {pizza.ingredients}
-                  </Typography>
-                  <Typography variant="body2" color={theme.palette.secondary.contrastText}>
+                  </PrimaryText>
+                  <PrimaryText variant="body2">
                     <strong>Allergens:</strong> {pizza.allergens}
-                  </Typography>
+                  </PrimaryText>
                 </CardContent>
                 <CardActions sx={{ padding: '16px' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
-                      <Remove />
+                      <Remove color="action" />
                     </IconButton>
-                    <Typography variant="body1" sx={{ margin: '0 12px' }}>
+                    <PrimaryText variant="body1" sx={{ margin: '0 12px' }}>
                       {quantity[index] || 1}
-                    </Typography>
+                    </PrimaryText>
                     <IconButton onClick={() => handleIncreaseQuantity(index)}>
-                      <Add />
+                      <Add color="action" />
                     </IconButton>
                   </Box>
-                  <Button variant="contained" color="primary" size="large" sx={{ borderRadius: 3 }}>
+                  <Button variant="contained" color="secondary" size="large" sx={{ borderRadius: 3 }}>
                     Add to my Order
                   </Button>
                 </CardActions>
